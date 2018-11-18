@@ -28,6 +28,8 @@ class Player
         Default: 5};
         this.hourRate = {Value: hourRate,
         Default: 0};
+        this.auto = {Value: false,
+        Default: false};
     }
 }
 /**
@@ -98,13 +100,17 @@ var outputData =
     ["player.money", player.money],
     ["player.comission", player.comission],
     ["player.hourRate", player.hourRate],
+    ["player.auto", player.auto],
     ["promotion.cost", promotion.cost],
     ["raisePrices.cost", raisePrices.cost]
 ];
 
 // INITIALIZE OUTPUT
 
-Load();
+if (document.cookie != "")
+{
+    Load();
+}
 FullUpdate();
 
 // Begin autosave
@@ -135,7 +141,9 @@ function Reset()
     {
         outputData[i][1].Value = outputData[i][1].Default;
     }
+    document.cookie = "";
     FullUpdate();
+    Save();
 }
 //
 // COOKIE METHODS
@@ -173,7 +181,19 @@ function Load()
 {
     for (let i = 0; i < outputData.length; ++i)
     {
-        outputData[i][1].Value = Number(getCookie(outputData[i][0]));
+        
+        if (outputData[i][1] === player.auto)
+        {
+            player.auto.Value = (getCookie(outputData[i][0]) == 'true');
+        }
+        else
+        {
+            outputData[i][1].Value = Number(getCookie(outputData[i][0]));
+        }
+    }
+    if (player.auto.Value == true)
+    {
+        EnableAuto();
     }
 }
 
@@ -210,10 +230,16 @@ function PromotionUp()
         promotion.cost.Value = Math.floor(promotion.cost.Value * promotion.costUp);
         if (player.hourRate.Value == promotion.upAmt)
         {
-            setInterval(HourRateMake, 500);
+            EnableAuto();
+            player.auto.Value = true;
         }
         FullUpdate();
     }
+}
+
+function EnableAuto()
+{
+    setInterval(HourRateMake, 500);
 }
 
 function RaisePricesUp()
