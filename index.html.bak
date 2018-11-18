@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css">
+.card {
+  background-color: #323232;
+  width: 300px;
+  padding-bottom: 0.3em;
+  padding-top: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  margin-bottom: 0.8em;
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-style: none;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: whitesmoke;
+  position: absolute;
+}
+
+body {
+  background-color: #161616;
+  font-size: large;
+  font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+p {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.btMoney {
+  margin-bottom: 0em;
+  margin-top: 0em;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-bottom-color: darkkhaki;
+  border-bottom-width: 0.2em;
+  border-bottom-style: solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: xx-large;
+  font-family: "Consolas";
+  font-weight: bold;
+}
+
+.btMoney:hover {
+  background-color: #5e995e;
+}
+
+#right {
+  float: none;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  position: absolute !important;
+  left: 350px;
+}
+
+#left {
+  float: left;
+}
+
+.card2 {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  background-color: #505050;
+box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.cardHead {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  background-color: #cccccc;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  color: #191919;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+  margin-top: 0.2em;
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  margin-left: 0.2em;
+}
+
+.cardLeft {
+  background-color: #505050;
+box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  float: left;
+  clear: left;
+  color: whitesmoke;
+  font-size: large;
+}
+
+.cardRight {
+  background-color: #505050;
+box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  float: right;
+  clear: right;
+}
+
+input {
+  background-color: #666666;
+  color: whitesmoke;
+}
+
+</style></head>
+  <body>
+    <div class="card2">
+      <h2> PRODUCTIVITY SIMULATOR </h2>
+    </div>
+    <!-- CAPITALISM -->
+    <div id="left" class="card" style="top: 63px; left: 3px;">
+      <div class="cardHead">
+        <h3> CAPITALISM </h3>
+      </div>
+      <input id="btMakeMoney" class="btMoney" value="MAKE MONEY" type="button">
+      <div id="capUpsOut" class="card2"> </div>
+    </div>
+    <!-- CAP UPS -->
+    <div id="capUps" class="card" style="top: 398px; left: 0px;">
+      <div class="cardHead">
+        <h3> CAPITALISM UPGRADES </h3>
+      </div>
+      <div class="cardLeft">NAME</div>
+      <div class="cardRight">COST</div>
+    </div>
+    <!-- RESOURCES -->
+    <div id="right" class="card" style="top: 64px; left: 330px;">
+      <div class="cardHead">
+        <h3> RESOURCES </h3>
+      </div>
+      <div id="resourcesOut" class="card2"> </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
