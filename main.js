@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 
 /**
  * CLASSES
@@ -32,30 +33,38 @@ class Player
         Default: false};
     }
 }
+
+class Ability
+{
+    constructor(name)
+    {
+
+    }
+}
 /**
  * VARS
  */
 // Resources
 // (money = 0, comission = 5, hourRate = 0)
-var player = new Player(0, 5, 0);
+const player = new Player(0, 5, 0);
 
 // Abilities
-var promotion = new Upgrade("Promotion", 20);
+const promotion = new Upgrade("Promotion", 20);
 promotion.upAmt = 3;
 promotion.costUp = 1.2;
 
-var raisePrices = new Upgrade("Raise Prices", 15);
+const raisePrices = new Upgrade("Raise Prices", 15);
 raisePrices.upAmt = 2;
 raisePrices.costUp = 1.5;
 
 // GRAB ELEMENTS
-var BtMakeMoney = document.getElementById("btMakeMoney");
-var BtReset = document.getElementById("btReset");
+const BtMakeMoney = document.getElementById("btMakeMoney");
+const BtReset = document.getElementById("btReset");
 
 // GRAB CONTAINERS
-var CapUpsOut = document.getElementById("capUpsOut");
-var CapUps = document.getElementById("capUps");
-var ResourcesOut = document.getElementById("resourcesOut");
+const CapUpsOut = document.getElementById("capUpsOut");
+const CapUps = document.getElementById("capUps");
+const ResourcesOut = document.getElementById("resourcesOut");
 
 /**
  * CREATE ELEMENTS
@@ -76,14 +85,17 @@ var upgrades = [promotion, raisePrices];
 // Raise Prices (comission up)
 for (var upgrade of upgrades)
 {
+    var hbox = document.createElement("div");
+    hbox.className = "flex hbox";
     upgrade.bt = document.createElement("input");
     upgrade.bt.type = "button";
-    upgrade.bt.className = "cardLeft";
+    upgrade.bt.className = "bt";
     upgrade.bt.value = upgrade.name;
-    CapUps.appendChild(upgrade.bt);
+    hbox.appendChild(upgrade.bt);
     upgrade.costOut = document.createElement("div");
-    upgrade.costOut.className = "cardRight";
-    CapUps.appendChild(upgrade.costOut);
+    upgrade.costOut.className = "label";
+    hbox.appendChild(upgrade.costOut);
+    CapUps.appendChild(hbox);
 }
 
 

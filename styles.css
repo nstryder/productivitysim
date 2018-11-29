@@ -1,3 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+/* MAIN */
+*	{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: aliceblue;
+  padding: 1%;
+  margin-bottom: 2%;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
 body {
-  background: black;
+  background-color: #161616;
+  font-size: large;
+  font-family: "Titillium Web", "Arial", "Helvetica", "sans-serif";
+}
+
+/* FLEX CONTAINERS */
+.flex {
+  display: flex;
+
+}
+.vbox {
+  flex-direction: column;
+}
+.hbox {
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* SECTION CONTAINERS */
+.card {
+  background-color: #323232;
+  padding: 0.5em;
+  margin: 0.5em;
+	box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border-style: none;
+  color: whitesmoke;
+}
+
+.card2 {
+  background-color: #505050;
+  box-shadow: none;
+}
+
+.cardHead {
+  border-radius: 4px;
+  margin: 0.2em;
+  background-color: aliceblue;
+  padding: 0.2em;
+  color: #191919;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+  margin: 0.2em;
+}
+
+.label {
+  margin: 0.5em 0.8em;
+  padding: 0.5em;
+  background-color:#5e995e;
+  border: none;
+  border: 3px solid #5e995e;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.bt {
+  margin: 0.5em 0.8em;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border: 3px solid #5e995e;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.1s ease;
+}
+.bt:hover {
+  background-color: #5e995e;
+} 
+.bt:active {
+	background-color: #6ea06f;
+}
+
+.btMoney {
+  font-size: xx-large;
+}
+
+
+
+
+
+
+
+
+
+input {
+  background-color: #666666;
+  color: whitesmoke;
+}
+
+#btReset {
+  position: absolute;
 }
