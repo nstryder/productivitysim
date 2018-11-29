@@ -1,5 +1,5 @@
 /* jshint esversion: 6 */
-
+// TODO: Fix reset bug
 /**
  * CLASSES
  */
@@ -34,13 +34,6 @@ class Player
     }
 }
 
-class Ability
-{
-    constructor(name)
-    {
-
-    }
-}
 /**
  * VARS
  */
@@ -55,15 +48,15 @@ promotion.costUp = 1.2;
 
 const raisePrices = new Upgrade("Raise Prices", 15);
 raisePrices.upAmt = 2;
-raisePrices.costUp = 1.5;
+raisePrices.costUp = 1.35;
 
 // GRAB ELEMENTS
 const BtMakeMoney = document.getElementById("btMakeMoney");
-const BtReset = document.getElementById("btReset");
+const BtReset =     document.getElementById("btReset");
 
 // GRAB CONTAINERS
-const CapUpsOut = document.getElementById("capUpsOut");
-const CapUps = document.getElementById("capUps");
+const CapUpsOut =   document.getElementById("capUpsOut");
+const CapUps =      document.getElementById("capUps");
 const ResourcesOut = document.getElementById("resourcesOut");
 
 /**
@@ -85,20 +78,25 @@ var upgrades = [promotion, raisePrices];
 // Raise Prices (comission up)
 for (var upgrade of upgrades)
 {
+    // Create hbox to contain name and cost
     var hbox = document.createElement("div");
     hbox.className = "flex hbox";
+
+    // Create upgrade button
     upgrade.bt = document.createElement("input");
     upgrade.bt.type = "button";
     upgrade.bt.className = "bt";
     upgrade.bt.value = upgrade.name;
     hbox.appendChild(upgrade.bt);
+
+    // Create cost
     upgrade.costOut = document.createElement("div");
     upgrade.costOut.className = "label";
     hbox.appendChild(upgrade.costOut);
+
+    // Finalization
     CapUps.appendChild(hbox);
 }
-
-
 
 // EVENT DELEGATES
 BtMakeMoney.onclick = MakeMoney;
