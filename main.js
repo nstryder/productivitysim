@@ -94,7 +94,7 @@ const buyPetFood = new Upgrade("Buy Pet Food", 100);
 // PET
 const feed = new Upgrade("Feed Pet (Needs pet food)", 1);
 
-const evolve = new Upgrade("Evolve (Needs levels", 10);
+const evolve = new Upgrade("Evolve (Needs levels)", 10);
 evolve.costUp = 30;
 
 //#endregion 
