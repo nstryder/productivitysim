@@ -9,12 +9,24 @@
 <header>
   PRODUCTIVITY SIMULATOR
 </header>
+
+<!-- BODY -->
 <body>
 
-
+<!-- RESOURCE BOX -->
+<div class="flex hbox">
+    <!-- RESOURCES -->
+    <div class="card">
+      <div class="cardHead">
+        <h3> RESOURCES </h3>
+      </div>
+      <div id="resourcesOut" class="card card2"> </div>
+    </div>
+</div> <!-- end of resource box -->
 
 <!-- MONEY MAKING SECTION HBOX-->
 <div class="flex hbox">
+  <!-- MAKE MONEY button-->
   <input 
   class="bt" 
   id="btReset" 
@@ -23,12 +35,12 @@
   type="button"/>
 
   <!-- CAPITALISM -->
-  <div id="left" class="card flex vbox">
+  <div class="card flex vbox">
     <div class="cardHead">
       <h3> CAPITALISM </h3>
     </div>
 
-    <input id="btMakeMoney" class="bt btMoney" 
+    <input id="btMakeMoney" class="bt btBig" 
     value="MAKE MONEY" type="button"/>
 
     <!-- STATS GO HERE -->
@@ -48,16 +60,54 @@
 
 </div> <!-- End of money section -->
 
-<!-- RESOURCE BOX -->
-<div class="flex hbox">
-    <!-- RESOURCES -->
-    <div id="right" class="card" style="top: 64px; left: 330px;">
-      <div class="cardHead">
-        <h3> RESOURCES </h3>
-      </div>
-      <div id="resourcesOut" class="card card2"> </div>
+<!-- PET BOX -->
+<div id="petBox" class="flex hbox">
+
+  <!-- PET DISPLAY -->
+  <div class="card">
+    <!-- header -->
+    <div class="cardHead">
+      <h3>PET DISPLAY</h3>
     </div>
-</div>
+    
+    <!-- name -->
+    <div class="flex hbox">
+      <p>Name: </p>
+      <input type="text" class="progressbar"/>
+    </div>
+
+    <!-- pet image -->
+    <div class="cardHead">
+      <img id="petState" src="images/pet4.jpg" style="width:128px; height:128px;"/>
+    </div>
+
+    <!-- xp bar -->
+    <div class="progressbar">
+      <div id="innerXPBar"></div>
+    </div>
+    <!-- pet stats go here-->
+    <div id="petStatsOut" class="card card2">
+      <p id="lvl"></p>
+      <p id="xp"></p>
+      <p id="toNextLv"></p>
+    </div>
+  </div> <!-- end of pet display -->
+
+  <!-- PET ACTIONS -->
+  <div id="petActions" class="card">
+    <!--header-->
+    <div class=cardHead>
+      <h3>PET ACTIONS</h3>
+    </div>
+
+    <!-- actions go here -->
+    <div class="flex hbox">
+      <div class="label">NAME</div>
+      <div class="label">COST</div>
+    </div>
+  </div> <!-- end of pet actions-->
+
+</div> <!-- End of pet box -->
 
   <script src="main.js"></script>
 </body>

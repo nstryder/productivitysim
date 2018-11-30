@@ -5,12 +5,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  object-fit: scale-down;
+  transition: all 0.2s ease;
 }
 
 header {
   background-color: aliceblue;
   padding: 1%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   font-size: 2em;
   font-weight: bold;
   text-align: center;
@@ -25,7 +27,7 @@ body {
 /* FLEX CONTAINERS */
 .flex {
   display: flex;
-
+  flex-wrap: wrap;
 }
 .vbox {
   flex-direction: column;
@@ -38,8 +40,8 @@ body {
 /* SECTION CONTAINERS */
 .card {
   background-color: #323232;
-  padding: 0.5em;
-  margin: 0.5em;
+  padding: 0.3em;
+  margin: 0.3em;
 	box-shadow: 0.2em 0.2em 0.2em 0em rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   border-style: none;
@@ -49,14 +51,16 @@ body {
 .card2 {
   background-color: #505050;
   box-shadow: none;
+  padding: 0.3em;
 }
 
 .cardHead {
   border-radius: 4px;
-  margin: 0.2em;
+  margin: 0.5em;
   background-color: aliceblue;
   padding: 0.2em;
   color: #191919;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5 {
@@ -74,10 +78,11 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
+
 /* BUTTONS */
 .bt {
-  margin: 0.5em 0.8em;
-  padding: 0.5em;
+  margin: 0.3em;
+  padding: 0.3em;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border: 3px solid #5e995e;
@@ -93,17 +98,9 @@ h1, h2, h3, h4, h5 {
   border-color: #67a867;
 }
 
-.btMoney {
+.btBig {
   font-size: xx-large;
 }
-
-
-
-
-
-
-
-
 
 input {
   background-color: #666666;
@@ -112,4 +109,29 @@ input {
 
 #btReset {
   position: absolute;
+}
+
+/* Progress bar */
+
+.progressbar {
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid #5e995e;
+  border-radius: 20px;
+  /* (height of inner div) / 2 + padding */
+  padding: 3px;
+  margin: 0.2em;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.progressbar>div {
+  background-color: #5e995e;
+  width: 20%;
+  /* Adjust with JavaScript */
+  height: 20px;
+  border-radius: 10px;
+}
+
+/* Misc */
+.hide {
+  display:none;
 }
