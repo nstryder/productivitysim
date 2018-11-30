@@ -389,6 +389,7 @@ function Load()
     // Check if pet module is unlocked
     if (petIsUnlocked.Value == 1)
     {
+        player.money.Value += unlockPet.cost.Value;
         UnlockPet();
     }
 }
