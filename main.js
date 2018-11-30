@@ -13,8 +13,7 @@ class Upgrade
     constructor(name, cost)
     {
         this.name = name;
-        this.cost = {Value: cost,
-        Default: cost};
+        this.cost = {Value: cost, Default: cost};
         
         this.upAmt = null;
         this.costUp = null;
@@ -30,7 +29,7 @@ class Player
     constructor(money, comission, hourRate)
     {
         // Capitalism
-        this.money =        {Value: money,      Default: 10000000};
+        this.money =        {Value: money,      Default: 0};
         this.comission =    {Value: comission,  Default: 5};
         this.hourRate =     {Value: hourRate,   Default: 0};
         this.auto =         {Value: 0,          Default: 0};
@@ -48,7 +47,7 @@ class Pet
         this.level = {Value: level, Default: 1};
         this.xp = {Value: xp, Default: 0};
         this.toNextLv = {Value: toNextLv, Default: 100};
-        this.state = {Value: 0, Default: 0}
+        this.state = {Value: 0, Default: 0};
     }
 }
 //#endregion
@@ -62,11 +61,11 @@ class Pet
 // Resources
 // Player
 // (money = 0, comission = 5, hourRate = 0)
-const player = new Player(1111110, 5, 0);
+const player = new Player(0, 5, 0);
 
 // Pet
 // (level = 1, xp = 0, toNextLv = 100)
-const pet = new Pet(200, 0, 100);
+const pet = new Pet(1, 0, 100);
 
 // Pet states (evolution images)
 const petStates = ["pet1.gif", "pet2.png", "pet3.png", "pet4.jpg"];
@@ -94,7 +93,9 @@ const buyPetFood = new Upgrade("Buy Pet Food", 100);
 
 // PET
 const feed = new Upgrade("Feed Pet (Needs pet food)", 1);
+
 const evolve = new Upgrade("Evolve (Needs levels", 10);
+evolve.costUp = 30;
 
 //#endregion 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -522,7 +523,7 @@ function Evolve()
     {
         pet.level.Value -= evolve.cost.Value;
         pet.state.Value++;
-        evolve.cost.Value += 30;
+        evolve.cost.Value += evolve.costUp;
         // Remove evolve button if maxed out
         if (pet.state.Value == petStates.length - 1)
         {
